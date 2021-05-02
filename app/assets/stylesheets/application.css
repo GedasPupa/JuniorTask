@@ -1,0 +1,155 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.bg_primary-color {
+  background-color: #FFFFFF;
+}
+.primary-color {
+  background-color: #FFFFFF;
+}
+.bg_secondary-color {
+  background-color: #293241;
+}
+.secondary-color {
+  color: #293241;
+}
+.custom-button.btn {
+  margin: 10px 0 0 20px;
+  background-color: #293241;
+  color: #FFF;
+  border: none;
+}
+.custom-button.btn:hover {
+  background-color: rgba(0, 0, 0, .2);
+  color: rgb(0, 0, 0) !important;
+  border: none;
+}
+.hero {
+  width: 100vw;
+  height: 50vh;
+}
+.hero img {
+  object-fit: cover;
+  object-position: top;
+  height: 100%;
+  width: 100%;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Playlist-save {
+  cursor: pointer;
+  width: 10rem;
+  padding: .77rem 0;
+  border-radius: 54px;
+  border-width: 0px;
+  margin-top: 1.27rem;
+  background-color: #6c41ec;
+  text-align: center;
+  font-size: .83rem;
+  transition: background-color .25s;
+  color: #fff;
+  font-weight: 500;
+}
+
+.Playlist-save:hover {
+  background-color: rgba(108, 65, 233, .7);
+}
+
+.Playlist, .Results {
+  width: 48%;
+  height: 750px;
+  overflow-y: scroll;
+  padding: .88rem;
+  background-color: rgba(187, 210, 214, 0.7);
+  box-shadow: 1px 2px 1px 2px #000000;
+  padding: 2.27rem 1.16rem;
+  margin-bottom: 2rem;
+}
+.Playlist h2, .Results h2 {
+  text-align: center;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+.TrackList {
+  width: 100%;
+}
+.Track {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.Track-action {
+  cursor: pointer;
+  padding: .5rem;
+  font-size: 1.05rem;
+  transition: color .25s;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(0, 0, 0);
+}
+
+.Track-action:hover {
+  color: rgba(0, 0, 0, .5);
+}
+
+.Track-information {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 72px;
+}
+
+.Track-information h3 {
+  margin-bottom: .22rem;
+  font-size: 0.9rem;
+}
+
+.Track-information p {
+  font-size: .9rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+}
+.Track-span {
+  font-size: 0.8rem;
+}
+.Red {
+  color: red;
+  font-size: 0.8rem;
+}
+.BlueL {
+  color: blue;
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 1020px) {
+  .Playlist, .Results {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+}
