@@ -17,8 +17,6 @@ class Track extends React.Component {
                     <div>
                     <button className='Track-action Red' id={this.props.mfr.id} onClick={this.deleteFromDB}>Delete from DB!</button>
                     <Link to={`/records/${this.props.mfr.id}/edit`}>RENAME</Link>
-                    {/* <button className='Track-action Red' id={this.props.mfr.id} name={this.props.mfr.Mfr_ID} onClick={this.rename}>Rename!</button> */}
-
                     <button className='Track-action' onClick={this.deleteFromFavorites}>-</button>
                     </div>
                 )
@@ -98,7 +96,7 @@ class Track extends React.Component {
         })
         .then(() => { 
             alert("Record deleted from DB!");
-            this.props.history.push("/records");
+            // this.props.history.push("/records");
         })
         .catch(error => console.log(error.message));
     }

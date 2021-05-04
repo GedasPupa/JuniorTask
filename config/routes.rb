@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       post 'records/create'
       get '/show/:id', to: 'records#show'
       delete '/destroy/:id', to: 'records#destroy'
-      get  'records/:id/edit' => 'records#edit' 
-      put '/record/:id' => 'records#update'
+      get  'records/:id/edit', to: 'records#edit' 
+      put '/record/:id', to: 'records#update'
     end
   end
   root 'home#index'

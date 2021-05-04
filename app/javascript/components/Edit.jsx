@@ -39,32 +39,32 @@ class Edit extends React.Component {
   }
 
   rename(event) {
-      event.preventDefault();
-      const id = this.state.manufacturer.id;
-      const mfr_name = this.state.changedName.Mfr_Name;
-      console.log(id); // test
-      console.log(mfr_name); // test
-      const url = `/api/v1/record/${id}`;
-      if (mfr_name.length == 0)
-      return;
-      const body1 = {mfr_name};             
-      const token = document.querySelector('meta[name="csrf-token"]').content;
-      fetch(url, {
-      method: "PUT",
-      headers: {
-          "X-CSRF-Token": token,
-          "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body1)
-      })
-      .then(response => {
-          if (response.ok) {
-          return response.json();
-          }
-          throw new Error("Network response was not ok.");
-      })
-      .then(response => alert(`Record ${id} updated successfully!`))
-      .catch(error => console.log(error.message));
+    event.preventDefault();
+    const id = this.state.manufacturer.id;
+    const mfr_name = this.state.changedName.Mfr_Name;
+    console.log(id); // test
+    console.log(mfr_name); // test
+    const url = `/api/v1/record/${id}`;
+    if (mfr_name.length == 0)
+    return;
+    const body1 = {mfr_name};             
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+    fetch(url, {
+    method: "PUT",
+    headers: {
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body1)
+    })
+    .then(response => {
+        if (response.ok) {
+        return response.json();
+        }
+        throw new Error("Network response was not ok.");
+    })
+    .then(response => alert(`Record ${id} updated successfully!`))
+    .catch(error => console.log(error.message));
   }
 
     render() {
