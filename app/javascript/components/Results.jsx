@@ -8,7 +8,7 @@ class Results extends React.Component {
                 <h2>Results</h2>
                 <TrackList results={this.props.results}
                              onAdd={this.props.onAdd}
-                             records={this.props.records} 
+                             favorites={this.props.favorites} 
 
                          isRemoval={false} />
             </div>

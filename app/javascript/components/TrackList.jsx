@@ -9,7 +9,7 @@ class TrackList extends React.Component {
                     this.props.results.map(mfr => {
                         return <Track mfr={mfr} 
                                       key={mfr.Mfr_ID}
-                                  records={this.props.records}
+                                  favorites={this.props.favorites}
                                     onAdd={this.props.onAdd}
                                       onM={this.props.onM}
                                 isRemoval={this.props.isRemoval} />

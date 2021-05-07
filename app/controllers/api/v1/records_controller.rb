@@ -29,7 +29,7 @@ class Api::V1::RecordsController < ApplicationController
     end  end
 
   def update
-    record = Record.update(update_params)
+    record = Record.update(record_params)
     if record
       render json: record
     else
@@ -43,9 +43,9 @@ class Api::V1::RecordsController < ApplicationController
   end
 
   private
-  def update_params
-    params.permit(:Mfr_Name)
-  end
+  # def update_params
+  #   params.permit(:Mfr_Name)
+  # end
   def record_params
     params.permit(:Mfr_Name, :Mfr_ID)
   end

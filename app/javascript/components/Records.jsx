@@ -8,7 +8,7 @@ class Records extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      records: [],
+      // records: [],
       results: [],
       favorites: []
     };
@@ -31,25 +31,23 @@ class Records extends React.Component {
     const url2 = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json"
     
     fetch(url).then(this.handleErrors) 
-    .then(response => this.setState({ records: response, favorites: response }))
+    .then(response => this.setState({ favorites: response }))
     .catch(error => console.log(error.message));
   
     fetch(url2)
     .then(this.handleErrors)
     .then(jsonResponse => {
         const results = jsonResponse.Results.map(result => ({
-            Mfr_ID: result.Mfr_ID,
-            Mfr_Name: result.Mfr_Name
+          id: 0,  
+          Mfr_ID: result.Mfr_ID,
+          Mfr_Name: result.Mfr_Name            
         }));
-      this.setState({ results: results});
+      this.setState({ results: results });
     }).catch(error => console.log(error.message));
   }
 
   addToFavorites(mfr) {
     const mfrs = this.state.favorites;
-    if (mfrs.find(mfr1 => mfr1.Mfr_ID === mfr.Mfr_ID)) {
-      return;
-    }
     mfrs.push(mfr);
     this.setState({favorites: mfrs});
   }
@@ -84,9 +82,10 @@ class Records extends React.Component {
             <div className="box">
             <Results results={this.state.results}
                        onAdd={this.addToFavorites}
-                       records={this.props.records} />
+                       favorites={this.state.favorites} 
+                       />
             <Favorites results={this.state.favorites}
-                       records={this.state.records}
+                       favorites={this.state.favorites}
                            onM={this.deleteFromFavorites} />
             </div>
             <Link to="/" className="btn btn-link">

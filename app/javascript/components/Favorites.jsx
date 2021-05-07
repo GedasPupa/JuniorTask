@@ -16,7 +16,7 @@ class Favorites extends React.Component {
                 <h2>Favorites</h2>
                 <TrackList results={this.props.results}
                                onM={this.props.onM} 
-                           records={this.props.records} 
+                           favorites={this.props.favorites} 
                          isRemoval={true} />
                 <button className="btn custom-button" onClick={this.reload}>Refresh from DB!</button>
             </div>
