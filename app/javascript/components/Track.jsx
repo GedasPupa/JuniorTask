@@ -4,18 +4,11 @@ import { Link } from "react-router-dom";
 class Track extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            favorites: []
-         };
+
         this.addToFavorites = this.addToFavorites.bind(this);
         this.deleteFromFavorites = this.deleteFromFavorites.bind(this);
     }
-    componentDidMount() {
-        this.setState({ favorites: this.props.favorites });
-    }
-    componentWillUnmount() {
-        this.setState({ favorites: this.props.favorites })
-    }
+
     renderAction() {   
         if (this.props.isRemoval) {
             return (
